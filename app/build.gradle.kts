@@ -74,9 +74,14 @@ dependencies {
     implementation(libs.androidx.activity.compose.v170)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.converter.kotlinx.serialization)
-    implementation(libs.kotlinx.serialization.json.v160)
-    implementation(libs.retrofit2.kotlinx.serialization.converter)
 
+
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    implementation(libs.okhttp.v4110)
+
+    implementation(libs.androidx.navigation.compose.v277)
+    implementation(libs.navigation.compose)
 
 
     implementation(libs.okhttp)
