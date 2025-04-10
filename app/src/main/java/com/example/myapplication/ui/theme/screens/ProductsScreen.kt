@@ -23,7 +23,8 @@ fun ProductsScreen() {
     LaunchedEffect(Unit) {
         coroutineScope.launch {
             try {
-                productList = RetrofitInstance.api.getProducts()
+                val response = RetrofitInstance.api.getProducts()
+                productList = response.data
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -38,16 +39,16 @@ fun ProductsScreen() {
                     .padding(vertical = 8.dp)
             ) {
                 Column(Modifier.padding(16.dp)) {
-                    Text(product.title, style = MaterialTheme.typography.titleMedium)
+                    Text(product.attributes.title, style = MaterialTheme.typography.titleMedium)
                     Image(
-                        painter = rememberAsyncImagePainter(product.image),
+                        painter = rememberAsyncImagePainter(product.attributes.image),
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(180.dp)
                     )
-                    Text("Price: \$${product.price}")
+                    Text("Price: \$${product.attributes.price}")
                 }
             }
         }

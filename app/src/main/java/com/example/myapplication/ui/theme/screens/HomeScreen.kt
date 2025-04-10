@@ -15,7 +15,7 @@ fun HomeScreen(navController: NavController) {
             ExtendedFloatingActionButton(
                 onClick = {navController.navigate("products")}
             ) {
-                Text(text = "+", fontSize = 30.sp, fontWeight = FontWeight.Bold)
+                Text(text = "Go To Product Page", fontSize = 14.sp, fontWeight = FontWeight.Bold)
             }
         }
     ) { padding ->
