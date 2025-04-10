@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -82,7 +83,7 @@ dependencies {
 
     implementation(libs.androidx.navigation.compose.v277)
     implementation(libs.navigation.compose)
-
+    implementation(libs.coil.compose)
 
     implementation(libs.okhttp)
 

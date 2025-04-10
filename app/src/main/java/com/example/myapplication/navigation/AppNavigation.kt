@@ -4,13 +4,14 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-//import com.example.myjetpackapp.ui.screens.HomeScreen
-//import com.example.myjetpackapp.ui.screens.ProductsScreen
+import com.example.myapplication.ui.theme.screens.HomeScreen
+import com.example.myapplication.ui.theme.screens.ProductsScreen
+
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
-//    NavHost(navController, startDestination = "home") {
-//        composable("home") { HomeScreen(navController) }
-//        composable("products") { ProductsScreen() }
-//    }
+    NavHost(navController, startDestination = "home") {
+        composable("home") { HomeScreen(navController) }
+        composable("products") { ProductsScreen() }
+    }
 }
