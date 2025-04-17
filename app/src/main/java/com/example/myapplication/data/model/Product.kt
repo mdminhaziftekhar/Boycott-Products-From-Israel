@@ -1,24 +1,30 @@
 package com.example.myapplication.data.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class ProductResponse(
     val data: List<Product>
 )
 
-@Serializable
 data class Product(
     val id: Int,
-    @SerialName("attributes") val attributes: ProductAttributes
+    val attributes: ProductAttributes
 )
 
-@Serializable
 data class ProductAttributes(
-    val title: String,
-    val price: Double,
-    val description: String,
-    val category: String,
-    val image: String
+    val name: String,
+    @SerializedName("imageUrl") val imageUrl: String,
+    val proof: String,
+    val priority: Boolean,
+    val createdAt: String,
+    val updatedAt: String,
+    val publishedAt: String,
+    val proofUrl: String,
+    val tags: String?,
+    val filename: String,
+    val alternative: AlternativeWrapper
+)
+
+data class AlternativeWrapper(
+    val data: Any?
 )
